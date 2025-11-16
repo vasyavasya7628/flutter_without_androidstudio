@@ -1,59 +1,73 @@
-# Настройка Flutter для Android без Android Studio 
+# Flutter Android Setup Without Android Studio
 **Windows**
 
-## 📥 Загрузка инструментов
-1. Скачайте **Command Line Tools** с [официального сайта Android](https://developer.android.com/studio)
-2. Пролистайте в самый низ страницы, там будет **"Command line tools only"**
+## 📥 Download the Tools
+1. Download **Command Line Tools** from the [official Android website](https://developer.android.com/studio)
+2. Scroll to the bottom of the page, where you'll find **"Command line tools only"**
 
-## 📁 Создание структуры папок
-Создайте папку для Android SDK (пример для Windows):
+## 📁 Create Folder Structure
+Create a folder for Android SDK (example for Windows):
+```
 C:\progs\android_sdk
+```
 
-**Важно:** не используйте папки с особыми правами доступа (например, "Program Files")
+**Important:** Do not use folders with special access permissions (e.g., "Program Files")
 
-## 🗂️ Распаковка инструментов
-Распакуйте `commandlinetools-win-13114758_latest.zip` в папку C:\progs\android_sdk
+## 🗂️ Extract the Tools
+Extract `commandlinetools-win-13114758_latest.zip` into the folder `C:\progs\android_sdk`
 
-Должно получиться так: C:\progs\android_sdk\cmdline-tools
+You should have the following structure: `C:\progs\android_sdk\cmdline-tools`
 
-## ⚙️ Установка пакетов
-Откройте cmd и выполните:
+## ⚙️ Install Packages
+Open Command Prompt and execute:
 
-
-# Перейдите в папку с sdkmanager
+```cmd
+# Navigate to the sdkmanager folder
 cd C:\progs\android_sdk\cmdline-tools\bin
 
-# Установите необходимые пакеты
+# Install required packages
 sdkmanager --install "platforms;android-36"
 sdkmanager --install "platform-tools"
 sdkmanager --install "build-tools;36.0.0"
 sdkmanager --install "cmdline-tools;latest"
+```
 
-🌐 Настройка переменных среды
-Откройте Параметры Windows → Система → О программе → Дополнительные параметры системы
-
-Нажмите "Переменные среды"
+## 🌐 Environment Variables Setup
+Open Windows Settings → System → About → Advanced system settings → Environment Variables
 
 ![alt text](https://github.com/user-attachments/assets/2762a53d-7eb4-4ae8-9439-2a9bd1ed81f5)
 
 ![alt text](https://github.com/user-attachments/assets/e636e3f9-46dd-48ee-ba69-68eeeb71de90)
 
-Добавьте системную переменную:
+### Add System Variable:
+| Variable | Value |
+|----------|-------|
+| ANDROID_HOME | C:\progs\android_sdk |
 
-Переменная	Значение
-ANDROID_HOME	C:\progs\android_sdk
-Добавьте в переменную Path:
-
+### Add to Path Variable:
+```
 %ANDROID_HOME%\platform-tools
 %ANDROID_HOME%\cmdline-tools\latest\bin
 %ANDROID_HOME%\build-tools\35.0.2
+```
 
-## Проверка установки
+## ✅ Verify Installation
 
+```cmd
 flutter doctor
+```
 
-Если всё настроено правильно, Flutter должен распознать установленный Android SDK.
+If everything is configured correctly, Flutter should recognize the installed Android SDK.
 
-Примечание: Версии пакетов (android-35, build-tools 35.0.2) следует использовать актуальные на момент установки.
+### Notes:
+- After changing environment variables, you may need to restart your terminal
+- You may also need to specify the JDK location for Flutter:
+```cmd
+flutter config --jdk-dir "C:\Program Files\Java\jdk-23"
+```
 
-После изменения переменных среды может потребоваться перезапуск терминала.
+### Build Your App:
+```cmd
+flutter clean
+flutter build apk --release
+```
