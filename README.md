@@ -1,6 +1,14 @@
-# Flutter Android Setup Without Android Studio
-**Windows**
+# Flutter Android Setup Without Android Studio(Windows)
 
+I struggled for 5 hours until I got it working. This instruction works 100% for Windows 11 as of today. When setting environment variables, restart your program or terminal, but sometimes it doesn't help and it's better to restart your PC.
+
+## 📥 Download Flutter
+[official Flutter website](https://docs.flutter.dev/install/manual)
+
+![alt text](https://github.com/user-attachments/assets/a38dafc7-6ac1-4e4c-97de-f4513faf53cd)
+
+unpack archive it to `C:\progs\`. I use winrar and also test default win11 extracor.
+add `C:\progs\flutter\bin` to PATH
 ## 📥 Download the Tools
 1. Download **Command Line Tools** from the [official Android website](https://developer.android.com/studio)
 2. Scroll to the bottom of the page, where you'll find **"Command line tools only"**
@@ -48,7 +56,7 @@ Open Windows Settings → System → About → Advanced system settings → Envi
 ```
 %ANDROID_HOME%\platform-tools
 %ANDROID_HOME%\cmdline-tools\latest\bin
-%ANDROID_HOME%\build-tools\35.0.2
+%ANDROID_HOME%\build-tools\36.0.1
 ```
 
 ## ✅ Verify Installation
@@ -69,5 +77,6 @@ flutter config --jdk-dir "C:\Program Files\Java\jdk-23"
 ### Build Your App:
 ```cmd
 flutter clean
-flutter build apk --release
+flutter build apk --release or flutter build apk --split-per-abi
+
 ```
