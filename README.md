@@ -74,11 +74,11 @@ If everything is configured correctly, Flutter should recognize the installed An
 flutter config --jdk-dir "C:\Program Files\Java\jdk-23"
 ```
 ## To start a new project
-
+```cmd
 flutter create demo
 cd demo
 flutter run
-
+```
 
 ### Build Your App:
 ```cmd
