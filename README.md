@@ -24,7 +24,7 @@ C:\progs\android_sdk
 ## 🗂️ Extract the Tools
 Extract `commandlinetools-win-13114758_latest.zip` into the folder `C:\progs\android_sdk`
 
-You should have the following structure: `C:\progs\android_sdk\cmdline-tools`
+You should have the following structure: `C:\progs\android_sdk\cmdline-tools\latest\(files from cmdline-tools archive)`
 
 ## ⚙️ Install Packages
 Open Command Prompt and execute:
@@ -118,7 +118,7 @@ C:\progs\android_sdk
 ## 🗂️ Распаковка инструментов
 Распакуйте `commandlinetools-win-13114758_latest.zip` в папку `C:\progs\android_sdk`
 
-У вас должна быть следующая структура: `C:\progs\android_sdk\cmdline-tools`
+У вас должна быть следующая структура: `C:\progs\android_sdk\cmdline-tools\latest\(files from cmdline-tools archive)`
 
 ## ⚙️ Установка пакетов
 Откройте Командную строку и выполните:
